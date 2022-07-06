@@ -20,6 +20,7 @@ async function createServer() {
   const vite = await createViteServer({
     server: { middlewareMode: true },
     appType: 'custom',
+    configFile: path.join(process.cwd(), 'vite.config.ts')
   })
   // use vite's connect instance as middleware
   app.use(vite.middlewares)
